@@ -1,2 +1,2 @@
-# Identidade-Interplanet-ria
+# Identidade-Interplanetária
 Modelo de Identidade IPFS
