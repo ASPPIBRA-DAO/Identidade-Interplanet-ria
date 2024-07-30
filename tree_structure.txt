@@ -1,0 +1,55 @@
+.
+├── attendence.xlsx
+├── CNNmodel.py
+├── create_excel_files.py
+├── DetectImage.py
+├── haarcascade_frontalface_default.xml
+├── main.py
+├── __pycache__
+│   ├── DetectImage.cpython-310.pyc
+│   └── train.cpython-310.pyc
+├── README.md
+├── Record.xlsx
+├── requirements.txt
+├── trained.yml
+├── training_set
+│   ├── 1
+│   │   ├── 1000024702.jpg
+│   │   ├── 1000024736.jpg
+│   │   ├── 1000025332.jpg
+│   │   ├── 1000027618.jpg
+│   │   └── 1000028037.jpg
+│   ├── 2
+│   │   ├── 1000000608.jpg
+│   │   ├── 1000000958.jpg
+│   │   ├── 1000000964.jpg
+│   │   ├── 1000002362.jpg
+│   │   ├── 1000004483.jpg
+│   │   ├── 1000004485.jpg
+│   │   ├── 1000004737.jpg
+│   │   ├── 1000004738.jpg
+│   │   ├── 1000006219.jpg
+│   │   ├── 1000006738.jpg
+│   │   ├── 4354.jpg
+│   │   ├── 4557.jpg
+│   │   ├── 5686.jpg
+│   │   ├── 6910.jpg
+│   │   ├── 7675.jpg
+│   │   ├── 7708.jpg
+│   │   └── 7721.jpg
+│   └── 3
+│       ├── 1000006015.jpg
+│       ├── 1000006240.jpg
+│       ├── 1000006833.jpg
+│       ├── 1000007208.jpg
+│       ├── 1000011206.jpg
+│       ├── 1000017444.jpg
+│       ├── 1000021037.jpg
+│       ├── 1000022010.jpg
+│       ├── 1000022144.jpg
+│       ├── 1000022165.jpg
+│       ├── 1000022589.jpg
+│       ├── 1000024648.jpg
+│       └── 4665.jpg
+├── train.py
+└── tree_structure.txt
