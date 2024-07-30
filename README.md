@@ -20,6 +20,10 @@ O projeto está estruturado em vários arquivos e classes principais:
 - **tree_structure.txt**: Arquivo que descreve a estrutura do projeto.
 - **trained.yml**: Arquivo que armazena o modelo treinado do reconhecedor facial.
 
+## Refereciias
+
+- <https://github.com/topics/face-recognition-database>
+
 ## Dependências
 
 O projeto depende das seguintes bibliotecas Python:
