@@ -1,8 +1,4 @@
-# Identidade-Interplanetária
-
-Modelo de Identidade IPFS
-
-# Reconhecimento Facial e Rastreamento de Presença
+# Modelo de Identidade IPFS
 
 ## Visão Geral
 
