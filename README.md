@@ -8,6 +8,13 @@ Modelo de Identidade IPFS
 
 Este projeto implementa um sistema de reconhecimento facial para identificação e rastreamento de presença utilizando técnicas de aprendizado de máquina e processamento de imagens. O sistema é capaz de detectar rostos em imagens, reconhecer indivíduos previamente treinados e registrar sua presença em uma planilha Excel.
 
+### Modelos de Biometria
+
+- Facial: Reconhecimento de rostos através de imagens ou vídeos.
+- Irís: Análise da íris do olho para identificação individual.
+- Digital: Leitura e comparação de impressões digitais.
+- Voz: Análise das características únicas da voz de uma pessoa.
+
 ## Estrutura do Projeto
 
 O projeto está estruturado em vários arquivos e classes principais:
