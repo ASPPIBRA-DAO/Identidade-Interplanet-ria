@@ -2,14 +2,17 @@
 
 ## Visão Geral
 
-Este projeto implementa um sistema de reconhecimento facial para identificação e rastreamento de presença utilizando técnicas de aprendizado de máquina e processamento de imagens. O sistema é capaz de detectar rostos em imagens, reconhecer indivíduos previamente treinados e registrar sua presença em uma planilha Excel.
+Este projeto implementa um sistema de criação de um modelo de Identidade Digital para interação em sistemas descentralizados interplanetários, utilizando reconhecimento facial para a geração de credenciais e identificação dos usuários em transações financeiras que necessitam de provas de autenticidade (2FA). O sistema utiliza técnicas de aprendizado de máquina e processamento de imagens para detectar rostos em imagens, reconhecer usuários cadastrados e registrar sua presença em uma planilha Excel.
 
-### Modelos de Biometria
+## Modelos de Biometria
 
-- Facial: Reconhecimento de rostos através de imagens ou vídeos.
-- Irís: Análise da íris do olho para identificação individual.
-- Digital: Leitura e comparação de impressões digitais.
-- Voz: Análise das características únicas da voz de uma pessoa.
+- **Facial**: Reconhecimento de rostos através de imagens ou vídeos.
+
+### Futuras Atualizações
+
+- **Íris**: Análise da íris do olho para identificação individual.
+- **Digital**: Leitura e comparação de impressões digitais.
+- **Voz**: Análise das características únicas da voz de uma pessoa.
 
 ## Estrutura do Projeto
 
@@ -23,18 +26,18 @@ O projeto está estruturado em vários arquivos e classes principais:
 - **tree_structure.txt**: Arquivo que descreve a estrutura do projeto.
 - **trained.yml**: Arquivo que armazena o modelo treinado do reconhecedor facial.
 
-# AUTO_CONTRACT 📝
+## Funções Adicionais 📝
 
-## Automação de geração de contratos 🤖
+### Automação de Geração de Credenciais 🤖
 
-Este projeto implementa um sistema automatizado para geração de contratos. O sistema funciona da seguinte forma:
+Este projeto implementa um sistema automatizado para geração de credenciais. O sistema funciona da seguinte forma:
 
-- 📄 O usuário preenche um formulário HTML com as informações do contrato.
-- 💾 Os dados do formulário são salvos no formato JSON em um banco de dados.
-- ✅ As informações do banco de dados são validadas.
-- 📋 O modelo de contrato é preenchido com informações validadas do banco de dados.
-- 🖨️ O layout de impressão do contrato é exibido para o usuário.
-- 📥 O usuário pode clicar em um botão para gerar um PDF do contrato.
+- 📄 O usuário preenche um formulário HTML com as informações pessoais.
+- ✅ As informações do formulário são validadas.
+- 💾 Os dados do formulário são salvos no formato JSON em um banco de dados criptografado.
+- 📋 O modelo da Certidão é preenchido com as informações validadas.
+- 🖨️ O layout de impressão da Certidão é exibido para o usuário.
+- 📥 O usuário pode clicar em um botão para gerar um PDF para a impressão da Certidão e da Carteirinha.
 
 ## Refereciias
 
