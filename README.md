@@ -42,8 +42,8 @@ Este projeto implementa um sistema automatizado para geração de credenciais. O
 - 📥 O usuário pode clicar em um botão para gerar um PDF para a impressão da Certidão e da Carteirinha.
 
 <p align="center">
-  <img src="https://github.com/ASPPIBRA-DAO/Identidade-Interplanetaria/blob/7be63230915e4f5f81fe9eaafc3eded00219147d/imagens/layout_identidade.jpg" width="50%" />
-  <img src="https://github.com/ASPPIBRA-DAO/Identidade-Interplanetaria/blob/7be63230915e4f5f81fe9eaafc3eded00219147d/imagens/layout_identidade_02.jpg" width="50%" />
+  <img src="https://github.com/ASPPIBRA-DAO/Identidade-Interplanetaria/blob/7be63230915e4f5f81fe9eaafc3eded00219147d/imagens/layout_identidade.jpg" width="" />
+  <img src="https://github.com/ASPPIBRA-DAO/Identidade-Interplanetaria/blob/7be63230915e4f5f81fe9eaafc3eded00219147d/imagens/layout_identidade_02.jpg" width="" />
 </p>
 
 ## Referências e Dependências
