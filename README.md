@@ -2,11 +2,11 @@
 
 ## Visão Geral
 
-Este projeto implementa um sistema de criação de um modelo de Identidade Digital para interação em sistemas descentralizados interplanetários, utilizando reconhecimento facial para a geração de credenciais e identificação dos usuários em transações financeiras que necessitam de provas de autenticidade (2FA). O sistema utiliza técnicas de aprendizado de máquina e processamento de imagens para detectar rostos em imagens, reconhecer usuários cadastrados e registrar sua presença em uma planilha Excel.
+Este projeto implementa um sistema avançado para a criação de identidades digitais, permitindo interações seguras em sistemas descentralizados interplanetários. Utilizando reconhecimento facial, o sistema gera credenciais e autentica usuários para transações financeiras que exigem provas de autenticidade (2FA). Com o uso de técnicas de aprendizado de máquina e processamento de imagens e vídeos, o sistema é capaz de detectar rostos, reconhecer usuários cadastrados e registrar suas interações (logins) ou presença, armazenando essas informações em uma planilha Excel ou em um banco de dados.
 
 ## Modelos de Biometria
 
-- **Facial**: Reconhecimento de rostos através de imagens ou vídeos.
+- ✅ **Facial**: Reconhecimento de rostos através de imagens ou vídeos.
 
 ### Futuras Atualizações
 
