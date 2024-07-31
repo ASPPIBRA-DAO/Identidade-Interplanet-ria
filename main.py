@@ -4,6 +4,12 @@ import cv2
 from train import train_images as tr
 from DetectImage import detect_image as detect
 import tkinter as tk
+from services.form_validation.validate_form_data import validate_form_data
+from services.gerar_pdf import gerar_pdf
+from services.load_json import load_json
+from services.save_document import save_document
+
+
 
 def train_recognizer():
     """
@@ -55,6 +61,27 @@ mark_entry_button.place(relx=0.2, rely=0.5)
 
 close_entry_button = tk.Button(root, text="Close Entry", command=close_entry)
 close_entry_button.place(relx=0.6, rely=0.5)
+
+# Função principal
+def main():
+    # Carregamento das informações do arquivo .json
+    data = load_json(json_path='data/escritura.json')
+
+    # Validação das informações do contrato
+    validate_form_data(json_data=data)
+
+    # Geração do documento PDF
+    document = gerar_pdf(contract=data, template_html='report/report.html',
+                            base_url='report/', stylesheets_path='report/report.css')
+
+    # Salvamento do documento PDF
+    gerou = save_document(documento_bytes=document)
+
+    # Tratamento Genérico (Alterar para requisitos do APP depois)
+    if gerou:
+        print('Documento gerado com sucesso!')
+    else:
+        print('Erro na geração do documento.')
 
 # Inicia o loop principal da aplicação tkinter
 if __name__ == '__main__':
