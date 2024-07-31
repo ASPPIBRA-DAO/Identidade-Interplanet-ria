@@ -1,5 +1,7 @@
 # Modelo de Identidade IPFS
 
+![Imagem Principal](https://github.com/ASPPIBRA-DAO/Identidade-Interplanetaria/blob/e538c1ae6547a1281dd6591c8e1b6d3394def697/imagens/identidade.jpg)
+
 ## Visão Geral
 
 Este projeto implementa um sistema avançado para a criação de identidades digitais, permitindo interações seguras em sistemas descentralizados interplanetários. Utilizando reconhecimento facial, o sistema gera credenciais e autentica usuários para transações financeiras que exigem provas de autenticidade (2FA). Com o uso de técnicas de aprendizado de máquina e processamento de imagens e vídeos, o sistema é capaz de detectar rostos, reconhecer usuários cadastrados e registrar suas interações (logins) ou presença, armazenando essas informações em uma planilha Excel ou em um banco de dados.
