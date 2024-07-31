@@ -1,6 +1,7 @@
 # Modelo de Identidade IPFS
 
 ![Imagem Principal](https://github.com/ASPPIBRA-DAO/Identidade-Interplanetaria/blob/440bb7b4b6f248f0072fc7eab173ae169cccee61/imagens/Identidade%20IPFS.svg)
+![Imagem Principal](https://github.com/ASPPIBRA-DAO/Identidade-Interplanetaria/blob/fbaad8ace0dcbdb244ed4e3b2fa11683329fa7d6/imagens/Perfil%20IPFS.svg)
 
 ## Visão Geral
 
