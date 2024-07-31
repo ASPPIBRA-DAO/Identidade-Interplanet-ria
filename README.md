@@ -41,6 +41,9 @@ Este projeto implementa um sistema automatizado para geração de credenciais. O
 - 🖨️ O layout de impressão da Certidão é exibido para o usuário.
 - 📥 O usuário pode clicar em um botão para gerar um PDF para a impressão da Certidão e da Carteirinha.
 
+![Imagem Principal](https://github.com/ASPPIBRA-DAO/Identidade-Interplanetaria/blob/7be63230915e4f5f81fe9eaafc3eded00219147d/imagens/layout_identidade.jpg)
+![Imagem Principal](https://github.com/ASPPIBRA-DAO/Identidade-Interplanetaria/blob/7be63230915e4f5f81fe9eaafc3eded00219147d/imagens/layout_identidade_02.jpg)
+
 ## Referências e Dependências
 
 Este projeto depende das seguintes bibliotecas Python:
