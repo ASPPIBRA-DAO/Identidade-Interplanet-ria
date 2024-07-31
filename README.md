@@ -39,19 +39,16 @@ Este projeto implementa um sistema automatizado para geração de credenciais. O
 - 🖨️ O layout de impressão da Certidão é exibido para o usuário.
 - 📥 O usuário pode clicar em um botão para gerar um PDF para a impressão da Certidão e da Carteirinha.
 
-## Refereciias
+## Referências e Dependências
 
-- <https://github.com/topics/face-recognition-database>
+Este projeto depende das seguintes bibliotecas Python:
 
-## Dependências
-
-O projeto depende das seguintes bibliotecas Python:
-
-- OpenCV (cv2)
-- Pillow (PIL)
-- openpyxl
-- numpy
-- tkinter
+- **OpenCV (cv2)**: Utilizada para processamento de imagens e vídeos. [OpenCV](https://opencv.org/)
+- **Pillow (PIL)**: Utilizada para operações com imagens. [Pillow](https://pypi.org/project/pillow/)
+- **openpyxl**: Utilizada para criar e manipular arquivos Excel. [openpyxl](https://openpyxl.readthedocs.io/en/stable/)
+- **numpy**: Utilizada para operações matemáticas e manipulação de arrays. [numpy](https://numpy.org/pt/)
+- **tkinter**: Utilizada para criar interfaces gráficas de usuário (GUI). [tkinter](https://docs.python.org/pt-br/dev/library/tkinter.html)
+- **Face Recognition Database**: Base de dados para reconhecimento facial. [Face Recognition Database](https://github.com/topics/face-recognition-database)
 
 As dependências podem ser instaladas executando o seguinte comando:
 
