@@ -23,6 +23,19 @@ O projeto está estruturado em vários arquivos e classes principais:
 - **tree_structure.txt**: Arquivo que descreve a estrutura do projeto.
 - **trained.yml**: Arquivo que armazena o modelo treinado do reconhecedor facial.
 
+# AUTO_CONTRACT 📝
+
+## Automação de geração de contratos 🤖
+
+Este projeto implementa um sistema automatizado para geração de contratos. O sistema funciona da seguinte forma:
+
+- 📄 O usuário preenche um formulário HTML com as informações do contrato.
+- 💾 Os dados do formulário são salvos no formato JSON em um banco de dados.
+- ✅ As informações do banco de dados são validadas.
+- 📋 O modelo de contrato é preenchido com informações validadas do banco de dados.
+- 🖨️ O layout de impressão do contrato é exibido para o usuário.
+- 📥 O usuário pode clicar em um botão para gerar um PDF do contrato.
+
 ## Refereciias
 
 - <https://github.com/topics/face-recognition-database>
