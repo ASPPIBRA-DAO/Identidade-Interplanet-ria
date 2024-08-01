@@ -33,7 +33,7 @@ def verify_and_load_workbook(filename):
         raise ValueError(f"Erro ao carregar o arquivo {filename}: {e}")
 
 
-class DetectImage:
+class detect_image:
     def __init__(self, recordSheet, attendenceSheet):
         """
         Inicializa a classe de detecção de imagem com planilhas de registro e presença.

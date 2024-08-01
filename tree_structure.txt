@@ -1,4 +1,5 @@
 .
+├── app.log
 ├── attendence.xlsx
 ├── CNNmodel.py
 ├── create_excel_files.py
@@ -6,17 +7,35 @@
 │   ├── escritura.json
 │   ├── escritura_mini.json
 │   └── escritura_new.json
+├── deploy.prototxt
 ├── DetectImage.py
+├── face_data
+│   └── users
+│       └── user1
+│           ├── img01.jpg
+│           ├── img02.jpg
+│           ├── img03.jpeg
+│           ├── img04.jpeg
+│           ├── img05.jpeg
+│           ├── img06.jpeg
+│           ├── img07.jpeg
+│           ├── img08.jpeg
+│           ├── img09.jpeg
+│           ├── img10.jpeg
+│           ├── img11.jpeg
+│           ├── img12.jpeg
+│           └── img13.jpeg
 ├── haarcascade_frontalface_default.xml
 ├── imagens
+│   ├── Identidade IPFS.svg
 │   ├── identidade.jpg
 │   ├── layout_identidade_02.jpg
-│   └── layout_identidade.jpg
+│   ├── layout_identidade.jpg
+│   └── Perfil IPFS.svg
 ├── LICENSE
 ├── main (1).py
 ├── main.py
 ├── Meta_dados.json
-├── Mint_NFT.py
 ├── misc
 │   ├── associado.jpg
 │   ├── contracts
@@ -50,6 +69,9 @@
 │   │   └── styles.css
 │   └── venda_carro.png
 ├── printall.sh
+├── __pycache__
+│   ├── DetectImage.cpython-310.pyc
+│   └── train.cpython-310.pyc
 ├── README.md
 ├── Record.xlsx
 ├── report
@@ -74,6 +96,7 @@
 │   ├── table-content.svg
 │   └── thumbnail.png
 ├── requirements.txt
+├── res10_300x300_ssd_iter_140000.caffemodel
 ├── services
 │   ├── fill_contract_with_json.py
 │   ├── form_validation
@@ -87,4 +110,4 @@
 ├── train.py
 └── tree_structure.txt
 
-14 directories, 73 files
+18 directories, 92 files
