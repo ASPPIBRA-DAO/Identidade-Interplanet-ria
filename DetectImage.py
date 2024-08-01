@@ -32,7 +32,6 @@ def verify_and_load_workbook(filename):
     except Exception as e:
         raise ValueError(f"Erro ao carregar o arquivo {filename}: {e}")
 
-
 class detect_image:
     def __init__(self, recordSheet, attendenceSheet):
         """
@@ -42,15 +41,18 @@ class detect_image:
         - recordSheet: Nome do arquivo Excel de registro
         - attendenceSheet: Nome do arquivo Excel de presença
         """
-        # Inicializa os parâmetros da classe
         self.recordSheet = recordSheet
         self.attendenceSheet = attendenceSheet
         
         # Carrega o classificador de faces Haar Cascade
         self.cascade = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
+        if self.cascade.empty():
+            raise ValueError("Classificador Haar Cascade não carregado corretamente.")
         
         # Inicializa o reconhecedor facial LBPH e carrega um modelo treinado
         self.recognizer = cv2.face.LBPHFaceRecognizer_create()
+        if not os.path.isfile('trained.yml'):
+            raise FileNotFoundError("Modelo treinado não encontrado.")
         self.recognizer.read('trained.yml')
         
         # Lista para armazenar alunos já marcados como presentes
@@ -67,49 +69,49 @@ class detect_image:
         Retorna:
         - Nome do aluno identificado
         """
-        # Inicializa a captura de vídeo
+        print("Iniciando identificação...")
         cap = cv2.VideoCapture(0)
-        f = 0  # Contador de quadros
-        pred_name = "None"  # Nome predito do aluno
-        
+        if not cap.isOpened():
+            print("Erro ao abrir a captura de vídeo.")
+            return None
+
+        f = 0
+        pred_name = "None"
+
         while True:
-            # Captura um quadro de vídeo
-            _, frame = cap.read()
+            ret, frame = cap.read()
+            if not ret:
+                print("Erro ao capturar o frame.")
+                break
             
-            # Converte o quadro para escala de cinza
             gray_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
-            
-            # Equaliza o histograma da imagem em escala de cinza
             equalize = cv2.equalizeHist(gray_frame)
-            
-            # Aplica filtro de mediana para reduzir ruído
             image = cv2.medianBlur(equalize, 3)
+            faces = self.cascade.detectMultiScale(image, 1.1, 5)
             
-            # Detecta faces na imagem
-            face = self.cascade.detectMultiScale(image, 1.1, 5)
+            if len(faces) == 0:
+                print("Nenhuma face detectada.")
             
-            for x, y, w, h in face:
-                # Desenha um retângulo em torno da face detectada
+            for x, y, w, h in faces:
                 cv2.rectangle(frame, (x, y), (x+w, y+h), (255, 255, 0), 4)
-                
-                # Prediz o rótulo e a confiança para a face detectada
                 label, conf = self.recognizer.predict(gray_frame[y:y+h, x:x+w])
-                
-                # Obtém o nome correspondente ao rótulo predito
-                p_name = names.get(label)
+                p_name = names.get(label, "Desconhecido")
                 pred_name = p_name
-                
-                # Exibe o quadro com a face reconhecida
+                print(f"Face detectada: {p_name} (Confiança: {conf})")
                 cv2.imshow("Recognizing Face", frame)
                 
-                # Verifica se a tecla 'q' foi pressionada para interromper a captura de vídeo
-                flag = cv2.waitKey(1) & 0xFF
+                if cv2.waitKey(1) & 0xFF == ord('q'):
+                    print("Tecla 'q' pressionada. Encerrando.")
+                    break
+
                 f += 1
-                
-                # Se mais de 15 quadros foram processados, libera a captura de vídeo e retorna o nome predito
                 if f > 15:
-                    cap.release()
-                    return p_name
+                    print("Mais de 15 quadros processados. Encerrando.")
+                    break
+
+        cap.release()
+        cv2.destroyAllWindows()
+        return pred_name
 
     def writeEntry(self, p_name, branch, year):
         """
@@ -120,20 +122,18 @@ class detect_image:
         - branch: Ramo de estudo do aluno
         - year: Ano do aluno
         """
-        # Escreve a entrada de presença na planilha
         sheet = self.attendenceWorkbook.active
         sheet.insert_rows(idx=2, amount=1)
         sheet["A2"] = p_name
         sheet["B2"] = year
         sheet["C2"] = branch
         
-        # Obtém o horário atual e escreve na planilha
         time = datetime.now()
         curr_time = time.strftime("%H:%M:%S")
         sheet["D2"] = curr_time
         
-        # Salva a planilha de presença
         self.attendenceWorkbook.save(self.attendenceSheet)
+        print(f"Presença registrada para {p_name}.")
 
     def markEntry(self, p_name):
         """
@@ -142,20 +142,20 @@ class detect_image:
         Parâmetros:
         - p_name: Nome do aluno
         """
-        # Marca a entrada de um aluno na planilha de presença
         if p_name in self.students_marked:
             print("Entrada já marcada!")
         else:
             self.students_marked.append(p_name)
             sheet = self.recordWorkbook.active
             
-            # Procura o nome do aluno na planilha de registros e obtém seus dados
             for values in sheet.iter_rows(min_col=1, max_col=3, values_only=True):
                 rec_name = values[0]
-                if rec_name.lower() == p_name:
+                if rec_name.lower() == p_name.lower():
                     branch = values[1]
                     year = values[2]
                     self.writeEntry(p_name, branch, year)
+                    print(f"Entrada marcada para {p_name}.")
+                    break
 
     def close_entry(self, p_name):
         """
@@ -164,25 +164,21 @@ class detect_image:
         Parâmetros:
         - p_name: Nome do aluno
         """
-        # Fecha a entrada de presença de um aluno na planilha de presença
-        if not p_name in self.students_marked:
+        if p_name not in self.students_marked:
             print("Entrada não marcada!")
         else:
             sheet = self.attendenceWorkbook.active
             index = 0
             
-            # Procura o nome do aluno na planilha de presença
             for values in sheet.iter_rows(values_only=True):
                 rec_name = values[0]
                 index += 1
-                if rec_name.lower() == p_name:
-                    # Obtém o horário atual e escreve na planilha
+                if rec_name.lower() == p_name.lower():
                     time = datetime.now()
                     curr_time = time.strftime("%H:%M:%S")
                     sheet["E" + str(index)] = curr_time
                     print("Entrada fechada!")
                     
-                    # Salva a planilha de presença e remove o aluno da lista de alunos marcados
                     self.attendenceWorkbook.save(self.attendenceSheet)
                     self.students_marked.remove(p_name)
                     break
